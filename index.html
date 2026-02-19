@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿que es l'autoajuda?</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Verdana, sans-serif;
+    background:#f5f5f5;
+}
+.container{
+    width:90%;
+    margin:auto;
+    padding:20px;
+}
+.top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+button{
+    padding:10px 20px;
+    border:none;
+    background:#2f8d46;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+}
+button:hover{
+    background:#256f38;
+}
+.block{
+    background:white;
+    padding:25px;
+    margin-bottom:20px;
+    border:1px solid #ccc;
+}
+h1{
+    text-align:center;
+    font-weight:normal;
+}
+h2{
+    color:#2f8d46;
+}
+img{
+    width:100%;
+    max-height:400px;
+    object-fit:cover;
+    margin:15px 0;
+}
+form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+input{
+    padding:8px;
+}
+/* ================= CHATBOT ================= */
+#chatbot-widget {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  z-index: 9999;
+}
+#chat-header {
+  background-color: #1b5e20;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+#chat-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+.message {
+  margin: 5px 0;
+}
+.user {
+  text-align: right;
+  color: #1b5e20;
+}
+.bot {
+  text-align: left;
+  color: #333;
+}
+#chat-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+#chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  font-size: 14px;
+}
+#chat-input button {
+  padding: 10px;
+  background-color: #1b5e20;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0f5e42;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 9998;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="top">
+    <button onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">
+        Contacta amb nosaltres
+    </button>
+    <button onclick="document.getElementById('info').scrollIntoView({behavior:'smooth'})">
+        + info
+    </button>
+</div>
+
+<h1>Espai de Benestar Personal</h1>
+
+<div class="block">
+    <img src="https://www.ceupe.com/images/easyblog_articles/4344/b2ap3_large_autoayuda.png">
+    <p>Què és l’autoajuda?</p>
+    <p>L’autoajuda és el conjunt d’estratègies, tècniques i reflexions que una persona utilitza per millorar diferents aspectes de la seva vida. Es basa en el desenvolupament personal, l’adquisició d’hàbits positius i el reforç de l’autoconfiança per afrontar millor els reptes del dia a dia.</p>
+    <p>Per a què serveix l’autoajuda?</p>
+    <p>- Millorar l’autoconeixement i la presa de decisions.</p>
+    <p>- Gestionar l’estrès i les emocions de manera saludable.</p>
+    <p>- Enfortir l’autoestima i la confiança. </p>
+    <p>- Establir objectius clars i assolibles.</p>
+    <p>- Afrontar dificultats amb resiliència.</p>
+    <p>- Millorar les relacions personals.</p>
+    <p>- Fomentar el creixement personal.</p>
+    <p>- Mantenir l’equilibri emocional.</p>
+    <p>- Practicar l’autocura de manera constant.</p>
+    <p>Serveix l'autoayuda?</p>
+    <p>L’autoajuda pot ser una eina molt útil per al creixement personal i el benestar emocional. No obstant això, en situacions més complexes o problemes de salut mental, és fonamental recórrer a professionals qualificats. L’autoajuda pot complementar el procés, però no substitueix l’atenció professional. </p> 
+</div>
+
+<div class="block">
+    <h2>Xatbot</h2>
+    <p>Pots parlar amb el nostre xatbot clicant el botó flotant a la part inferior dreta.</p>
+</div>
+
+<div class="block" id="info">
+    <h2>Mes informació</h2>
+    <p>si necesites mes informacio pots consultar els seguents links</p>
+    <ul>
+        <li><a href="">Blog de Autoajuda</a></li>
+        <li><a href="">Blog de Psicologia</a></li>
+        <li><a href="">Blog de Desenvolupament Personal</a></li>
+</div>
+
+<div class="block" id="contacto">
+    <h2>Contacta amb nosaltres</h2>
+    <form>
+        <label>Correo/ num de telefon</label>
+        <input type="text">
+        <label>Nom</label>
+        <input type="text">
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+
+</div>
+
+<!-- BOTÓN FLOTANTE -->
+<button id="chat-toggle">💬</button>
+
+<!-- WIDGET -->
+<div id="chatbot-widget">
+  <div id="chat-header">Xatbot 2b</div>
+  <div id="chat-body">
+    <div class="message bot">Hola, sóc el chatbot de la web. Estic aquí per escoltar-te. Com et sents avui?</div>
+  </div>
+  <div id="chat-input">
+    <input type="text" id="user-input" placeholder="Escriu una pregunta..." />
+    <button onclick="enviaMissatge()">📨</button>
+  </div>
+</div>
+
+<script>
+
+document.getElementById('chat-toggle').addEventListener('click', function () {
+  const widget = document.getElementById('chatbot-widget');
+  widget.style.display = (widget.style.display === 'none') ? 'flex' : 'none';
+});
+
+function enviaMissatge() {
+  const input = document.getElementById('user-input');
+  const missatge = input.value.trim();
+  if (!missatge) return;
+
+  mostraMissatge(missatge, 'user');
+  input.value = '';
+
+  setTimeout(() => {
+    const resposta = generaResposta(missatge);
+    mostraMissatge(resposta, 'bot');
+  }, 500);
+}
+
+function mostraMissatge(text, tipus) {
+  const div = document.createElement('div');
+  div.className = `message ${tipus}`;
+  div.textContent = text;
+  document.getElementById('chat-body').appendChild(div);
+  document.getElementById('chat-body').scrollTop = document.getElementById('chat-body').scrollHeight;
+}
+
+function generaResposta(missatge) {
+  missatge = missatge.toLowerCase();
+
+  if (missatge.includes("hola")) return "Hola 😊 Com et puc ajudar avui?";
+  if (missatge.includes("trist") || missatge.includes("malament")) return "Ho sento molt. Vols explicar-me què ha passat?";
+  if (missatge.includes("ansietat") || missatge.includes("angoixa")) return "Prova una respiració lenta: inspira 4 segons, aguanta 4, expira 6.";
+  if (missatge.includes("estrès") || missatge.includes("cansat")) return "Potser necessites una pausa. Quan vas descansar l'última vegada?";
+  if (missatge.includes("gràcies")) return "Gràcies a tu per confiar en mi 💚";
+  if (missatge.includes("adéu")) return "Cuida't molt! Aquí estaré quan necessitis parlar.";
+  return "Pots explicar-m'ho amb més detall?";
+}
+</script>
+</body>
+</html>
